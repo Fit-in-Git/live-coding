@@ -1,0 +1,32 @@
+/* pseudo class */
+a.link-style_2:link {
+  color: #84cc16;
+}
+
+a.link-style_2:visited {
+  color: #38bdf8;
+}
+
+/* define your hover after visited */
+a.link-style_2:hover {
+  color: #f97316;
+}
+
+a.link-style_2:active {
+  color: #6366f1;
+}
+
+/* Hex */
+.color-test {
+  background-color: #fb7185;
+}
+
+/* rgb(red, green, blue) */
+.color-test_2 {
+  /* 0 - 255 */
+  background-color: rgb(255, 16, 32);
+
+  /* alpha - opacity */
+  /* 0.0 - 1.0 */
+  background-color: rgba(16, 104, 255, 0.363);
+}

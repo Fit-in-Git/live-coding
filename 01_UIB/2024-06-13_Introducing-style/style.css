@@ -30,18 +30,23 @@ ul {
 }
 
 /* Descendant combinators */
+
+/* Selects all <p> elements inside <div> elements */
 div p {
   /* background-color: lightgreen; */
 }
 
+/* Selects all <p> elements where the parent is a <div> element */
 div > p {
   /* background-color: orange; */
 }
 
+/* Selects the first <p> element that are placed immediately after <div> elements */
 div + p {
   /* background-color: purple; */
 }
 
-div ~ p{
+/* The general sibling selector (~) selects all elements that are next siblings of a specified element. */
+div ~ p {
   /* background-color: lightcyan; */
 }
