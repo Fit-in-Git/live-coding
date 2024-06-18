@@ -1,0 +1,102 @@
+:root {
+  /* (62.5 / 100) * 16 = 10px */
+  /* font-size: 62.5%; */
+
+  /* 14 / 16 = 0.875em OR 16 x 0.875 = 14px */
+  /* font-size: 0.875em; */
+}
+
+/* CSS Units */
+/* Absolute Units => px */
+/* Relative Units => % rem em vh 
+
+
+/* EXAMPLE-1 */
+
+div.a {
+  font-size: 25px;
+}
+
+/* x-small => 10px / small => 13px */
+/* medium =>  16px (default value) */
+/* large => 18px / x-large => 24px / xx-large => 32px */
+div.b {
+  font-size: large;
+}
+
+/* Relative Unit % */
+/* 50% of 16 => 8px */
+div.c {
+  font-size: 50%;
+}
+
+/* Default font size is 16px but we gave a new value => 180px */
+/* The font size of the parent is 180px */
+.parent {
+  font-size: 180px;
+}
+
+/* 50% of the font size of its parent element => 90px */
+.parent p {
+  font-size: 50%;
+}
+
+/* EXAMPLE-2 */
+.test {
+  font-size: 16px;
+  background-color: lightgreen;
+  padding: 2em; /* padding: 1em => 16px (current font size)*/
+}
+
+/* EXAMPLE-3 */
+.box {
+  background-color: lightgray;
+  width: 60px;
+  padding: 1em;
+  border: 2px solid red;
+  border-radius: 1em;
+}
+
+/* Here padding is 12px */
+.box-small {
+  font-size: 12px;
+}
+
+/* Here padding is 18px */
+.box-large {
+  font-size: 18px;
+}
+
+/* EXAMPLE-4 */
+.test2 {
+  font-size: 1.2em; /* 1.2 x 16 (parent font size) = 19.2px OR 19.2 / 16 =  1.2em */
+  padding: 1.2em; /* 23.04px*/
+}
+
+/* EXAMPLE-5 */
+.panel {
+  font-size: 1rem;
+  border: 2px solid blueviolet;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+/* rem unit stands for root em */
+/* It is a relative unit that is based on the font size of the root <html> */
+/* The em is relative relative unit that is based on the font size of the parent */
+.panel > h2 {
+  /* we assume if root is 16px so => 16 x 0.8 = 12.8px OR 12.8 / 16 = 0.8 */
+  /* we assume if root is 14px so => 14 x 0.8 = 11.2px OR 11.2 / 14 = 0.8 */
+
+  font-size: 0.8em;
+}
+
+/* EXAMPLE-6 */
+/* vw vh => viewport width - height */
+.square {
+  background-color: aqua;
+  width: 100vw;
+  height: 100vh;
+}
+/* 1 / 100 => vw = 1 => 1 / 100 */
+/* 1 / 100 => vh = 1 => 1 / 100 */

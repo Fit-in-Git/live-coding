@@ -1,0 +1,33 @@
+/* EXAMPLE-2 */
+.test {
+  width: 700px;
+  /* border: width style color; */
+  border: 15px solid #84cc16;
+  /* border-top: 10px solid orange; */
+  /* border-bottom: 20px solid green; */
+
+  /* With 2 values */
+  /* border-width: 20px 40px;
+  border-width: 20px 40px 70px 100px; */
+  border-top: 30px groove red;
+  border-right: 30px ridge green;
+  border-bottom: 30px dotted green;
+
+  /* Max 50% */
+  border-radius: 50%;
+
+  /* to move the Image in the right side  */
+  /* float: right; */
+}
+
+/* EXAMPLE-3 */
+.test2 {
+  /* The original size is => 658 x 658 */
+  /*  if we say i want to have this image 400 x 500, with object-fit: fill it doesn't look good */
+  width: 400px;
+  height: 500px;
+
+  /* object-fit: fill (default value) */
+  /* object-fit: contain - cover - none - scale down */
+  object-fit: contain;
+}

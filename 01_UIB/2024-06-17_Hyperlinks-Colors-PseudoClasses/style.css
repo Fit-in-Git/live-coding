@@ -30,3 +30,8 @@ a.link-style_2:active {
   /* 0.0 - 1.0 */
   background-color: rgba(16, 104, 255, 0.363);
 }
+
+/* Combining Multiple Selectors */
+/* .test, #test1, p{
+
+} */
