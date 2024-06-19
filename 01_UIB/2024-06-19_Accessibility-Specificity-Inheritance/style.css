@@ -1,0 +1,65 @@
+/* EXAMPLE-1 */
+.title {
+  color: chocolate;
+}
+
+h2 {
+  color: blueviolet;
+}
+
+#page-title {
+  color: aqua;
+}
+
+/* source tree or source order */
+#page-title {
+  color: green;
+}
+
+/* 101 */
+#main-nav a {
+  background-color: orange;
+}
+
+/* 111 */
+#main-nav.nav a {
+  background-color: aquamarine;
+}
+
+/* .nav a{
+    background-color: lightblue !important;
+} */
+
+#main-nav .test a {
+  background-color: olive;
+}
+
+.nav a {
+  color: red;
+}
+
+/* EXAMPLE-2 */
+.parent {
+  color: violet;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 5px solid red;
+  padding: 1em;
+}
+
+.child1 {
+  /* color: inherit;
+    font-size: inherit; */
+  /* font- and color => inherit */
+
+  /* height width margin padding border => no inherit */
+  color: initial; /* This text has the initial color (black, the browser default) */
+
+  color: unset; /* The text is violet now*/
+
+  /* You want the same border as your parent? */
+  border: inherit;
+  /* border: unset; => there is no border anymore */
+}
+
+/* !important => Override all previous styles - TRY NOT TO USE */
