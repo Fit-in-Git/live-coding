@@ -1,0 +1,79 @@
+body {
+  background-color: pink;
+}
+
+/* EXAMPLE-1 */
+/* vw (viewport width) */
+/* vh (viewport height) */
+/* 1vw = 1% of viewport width (Breite), so 50vw means => 50% of the viewport width  */
+
+.main-header {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-img {
+  height: 100%;
+  width: 100%;
+}
+
+/* EXAMPLE-2: just styling your semantic code */
+.container {
+  color: green;
+  background-color: yellow;
+}
+
+/* EXAMPLE-3 */
+div.first {
+  border: 7px solid red;
+  /* default width is => auto */
+
+  /* width: 350px; */
+  width: 50%;
+}
+
+/* EXAMPLE-4: If we want to center a block element => DON'T FORGET TO GIVE WIDTH */
+/* SO WITHOUT WIDTH YOU CAN'T GIVE POSITION TO YOUR ELEMENT BECAUSE IT IS FROM LEFT TO RIGHT AND THERE IS NO PLACE  */
+.second {
+  border: 10px solid green;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* EXAMPLE-5: overflow */
+.third {
+  border: 3px solid rgb(255, 68, 0);
+  width: 500px;
+  height: 100px;
+  /* overflow default value => visible*/
+  /* overflow-x and -y */
+  /* overflow others value => hidden scroll auto */
+  /* auto is best */
+  /* overflow: auto; */
+  /* overflow-x: ; */
+  overflow-y: hidden;
+}
+
+/* <aside> tag defines some content aside from the content */
+/* EXAMPLE-7 */
+aside {
+  width: 30%;
+  background-color: lightgray;
+  padding: 1em;
+  margin-left: auto;
+}
+
+/* NOTICE */
+/* margin or padding shorthands */
+
+/* top - right - bottom - left */
+/* padding: 16px; */
+
+/* top and bottom / right and left */
+/* padding: 16px 30px; */
+
+/* top - (right and left) - bottom */
+/* padding: 16px 30px 45px; */
+
+/* top - right - bottom - left */
+/* padding: 16px 30px 45px 70px; */
