@@ -1,0 +1,170 @@
+/* EXAMPLE-1 */
+
+body {
+  /* background-image: url("wolf.jpg"); */
+
+  /* REPEAT */
+  /* default value: repeat */
+  /* no-repeat round space repeat-x repeat-y */
+  /* background-repeat: no-repeat; */
+
+  /* POSITION */
+  /* default value: 0% 0% */
+  /* first value => horizontal, second value => vertical */
+  /* first value => left right center / second value => top bottom center */
+  /* you can use top left center bottom right as well => left center */
+  /* with one value => second value is 50% */
+  /* you can use pixel and viewport as well */
+  /* background-position-x: 200px;
+  background-position-y: 100px; */
+
+  /* background-position: 100px 40px; */
+
+  /* SIZE */
+  /* default value: auto (display its original size) */
+  /* first value is => width / second value is => height */
+  /* with one value, second is auto */
+  /* background-size: 500px; */
+
+  /* ATTACHMENT */
+  /* self study */
+  /* default => scroll */
+  /* fixed local */
+
+  /* background-color: orange; */
+
+  /* background shortcut */
+  /* color image repeat position size */
+  /* background: pink url("wolf.jpg") no-repeat center top / 350px 500px; */
+
+  /* background-image: linear-gradient(to left, red, pink, green); */
+  /* background-image: linear-gradient(to right, white, blue); */
+  /* background-image: radial-gradient(circle, orange, black, red); */
+}
+
+/* EXAMPLE-2 */
+.test {
+  width: 500px;
+  height: 250px;
+  /* Im Uhrzeigersinn rechts */
+  /* 0 deg = to top */
+  /* 90 deg = to right */
+  /* 180 deg = to bottom */
+  /* 270 deg = to left */
+
+  /* MINUS VALUES like -90deg is ok as well */
+
+  /* background-image: linear-gradient(-90deg, white, blue); */
+
+  /* PI => 3.14 */
+  /* radians with PI */
+  /* One full circle is 2π radians which approximates to 6.2832rad */
+  /* 1rad is 180/π degrees */
+  /* https://css-tricks.com/gradians-and-turns-the-quiet-heroes-of-css-angles/ */
+  background-image: linear-gradient(3.22rad, white, blue);
+
+  /* turn */
+  /* 1 turn is => one full circle => 360deg */
+  background-image: linear-gradient(0.1turn, white, blue);
+
+  /* grad (gradient) */
+  /* 400grad => one full circle = 360deg */
+  /* that means 100grad => 90deg */
+
+  /* 90deg = 100grad = 0.25turn ≈ 1.5708rad */
+  /* 180deg = 200grad = 0.5turn ≈ 3.1416rad */
+  /* -90deg = -100grad = -0.25turn ≈ -1.5708rad */
+  /* 0 = 0deg = 0grad = 0turn = 0rad */
+
+  /* 1. starts with red on the left */
+  /* 2. change to white at 40% of the width  */
+  /* 3. stays white until 60% of the width */
+  /* 4. then change to blue for the rest of the width */
+
+  background-image: linear-gradient(
+    100deg,
+    red 40%,
+    white 40%,
+    white 60%,
+    blue 10%
+  );
+
+  /* 2em  */
+  /* The gradient has 32px radius */
+  /* and is positioning => 25% from the left / 25% from the top */
+  background-image: radial-gradient(2em at 55% 35%, white, blue);
+}
+
+/* EXAMPLE-3 */
+/* We have 5 positions values */
+/* 1. static => default value */
+/* static => It is a very normal position as we expected */
+/* top bottom left right doesn't work here */
+.pos {
+  border: 3px solid red;
+  /* left: 40px; */
+}
+
+/* 2. relative */
+/* relative => wird relativ zi seiner normalen position positioniert */
+/* top bottom left right work here */
+.pos {
+  /* position: relative;
+  left: 40px;
+  top: 60px; */
+}
+
+/* 3. fixed */
+.pos {
+  /* position: fixed;
+  bottom: 0;
+  right: 0; */
+}
+
+/* 4. sticky */
+/* .pos {
+  position: sticky;
+  top: 0;
+} */
+
+/* EXAMPLE-3.1: position absolute */
+.parent {
+  border: 3px solid green;
+  width: 450px;
+  height: 200px;
+  position: relative;
+}
+
+.absolute {
+  border: 2px solid purple;
+  width: 160px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* EXAMPLE-4: z-index */
+.eltern {
+  border: 2px solid;
+  width: 700px;
+  height: 1000px;
+  position: relative;
+}
+
+/* both first and second child has the same position */
+/* with z-index you can manage it */
+.first-child {
+  background-color: cyan;
+  width: 300px;
+  position: absolute;
+  bottom: 0px;
+  z-index: 12;
+}
+
+.second-child {
+  background-color: coral;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
