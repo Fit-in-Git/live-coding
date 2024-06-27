@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Playwrite+DE+Grund:wght@100..400&display=swap");
+
+strong {
+  background-color: aquamarine;
+}
+
+/* EXAMPLE-2 */
+.font-test {
+  color: green;
+
+  /* without fallback */
+  /* if arial is not available, the browser will fallback its default font */
+  font-family: Arial;
+
+  /* with fallback*/
+  /* 1. family-name => Arial, Time New Roman */
+  /* 2. generic-family => monospace - sans-serif - serif - cursive - fantasy  */
+
+  /* Arial: this is the first choice font */
+  /* Helvetica:  this is the fallback font. If arial is not available, the browser will try Helvetica*/
+  /* sans-serif: if neither Arial nor Helvetica isn't available, the browser will use any available sens-serif font  */
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: "Playwrite US Trad", cursive;
+  font-family: "Playwrite DE Grund", cursive;
+}
