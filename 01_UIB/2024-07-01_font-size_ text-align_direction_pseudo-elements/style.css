@@ -1,0 +1,108 @@
+/* EXAMPLE-1 */
+body {
+  font-size: 20px;
+}
+
+.em-example {
+  font-size: 1.5em; /*1.5em * 20px = 30px */
+}
+
+/* NOTICE */
+/* em => Relative to parent */
+/* rem => Relative to root */
+
+.em-example2 {
+  font-size: 1.3em; /* 26px */
+  background-color: lightsalmon;
+  padding: 1.5em; /* (current element (font-size) 1.5 *  26 = 39px*/
+}
+
+/* NOTICE: How to find font-size in Browser => Setting -> Appearance -> font-size */
+
+/* EXAMPLE-3 */
+/* default value => left to right => ltr */
+/* rtl => for languages which starts from the right side like Arabic */
+/*  <p>كومبوزر و السموك </p> */
+.text-rtl {
+  /* direction: rtl; */
+  border: 2px solid pink;
+  width: 400px;
+  text-align: center;
+}
+
+/* EXAMPLE-4 */
+.justify {
+  width: 240px;
+  height: 200px;
+  border: 2px solid lightseagreen;
+  /* every line has equal width */
+  text-align: justify;
+  padding: 0.35em;
+}
+
+/* EXAMPLE-5 */
+/* 100 thin - 900 heavy */
+/* Default value => 400 oder normal */
+/* bold - bolder - lighter - normal */
+.weight {
+  background-color: lightskyblue;
+  font-weight: 600;
+  font-style: italic;
+
+  /* text-decoration */
+  /* Default value => none */
+  text-decoration: underline;
+  text-decoration: line-through;
+  text-decoration: overline;
+  text-decoration: line-through lightgreen 2px;
+
+  /* text-transform */
+  /* Default value => none */
+  text-transform: lowercase;
+  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+/* EXAMPLE-6 */
+/* text-shadow */
+/* Default value => none */
+.shadow {
+  text-shadow: 1px 7px red;
+
+  /* horizontal shadow / vertical shadow / blur radius / color  */
+  text-shadow: 0px 3px 4px rgb(217, 135, 11);
+
+  color: chocolate;
+  text-shadow: 1px 3px 3px rgb(29, 86, 29);
+}
+
+/* EXAMPLE-7 */
+h4::before {
+  content: "Hello ";
+  color: lightseagreen;
+  font-size: 1.3rem;
+}
+
+h4::after {
+  content: "🌌";
+}
+
+.ps::first-letter {
+  font-size: 2em;
+  color: brown;
+}
+
+.ps::first-line {
+  color: blue;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.line {
+  line-height: 1.4; /* 1.4 * 16 = 22.4px*/
+  /* if body is 20px => 2 * 20 = 40 */
+  font-size: 2em;
+  line-height: 1.5; /* 32 * 1.5* = 48px*/
+
+  /* You can use px as well but with numbers its cleaner */
+}
