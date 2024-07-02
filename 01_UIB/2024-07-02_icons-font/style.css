@@ -1,0 +1,21 @@
+/* sizing */
+.fa-lemon {
+  font-size: 48px;
+}
+
+.fa-facebook {
+  color: blue;
+}
+
+.fa-gift {
+  color: orange;
+  margin-top: 20px;
+}
+
+/* with pseudo elements => before and after */
+h3::after{
+    font-family: "Font Awesome 5 brands";
+    content: "\f167";
+    margin-left: 7px;
+    color: red;
+}
