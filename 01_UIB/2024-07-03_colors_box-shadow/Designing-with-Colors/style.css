@@ -1,0 +1,80 @@
+/* EXAMPLE-1 */
+:root {
+  --primary: #38bdf8;
+  --lighter: #7dd3fc;
+  --darker: #0369a1;
+  --color1: #fbbf24;
+  --color2: #65a30d;
+
+  --shadow: #3f6212;
+  --danger: #dc2626;
+}
+
+body {
+  background-color: var(--lighter);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  background-color: var(--color2);
+  color: var(--color1);
+  text-shadow: 1px 5px 7px var(--shadow);
+  z-index: 1000;
+}
+
+.card {
+  height: 500px;
+  width: 500px;
+  border: 2px solid;
+  margin: 200px auto;
+  text-align: center;
+  position: relative;
+}
+
+.del {
+  position: absolute;
+  bottom: 50px;
+  left: 220px;
+  background-color: var(--danger);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+/* EXAMPLE-2 */
+/* cold => blue / warm => yellow-orange-red */
+.temp {
+  background-color: red;
+}
+
+/* hue (0 - 360) => 0(red), 120(green), 240(blue)  */
+/* saturation (Sättigung) = only % => 0% unsaturated / 100% saturated */
+/* lightness => only % => 0% is black - 100% is white */
+
+/* to improve readability => reduce the saturation => Increase the lightness */
+.lightness {
+  background-color: hsl(220, 50%, 50%);
+  color: hsl(220, 20%, 80%);
+}
+
+/* EXAMPLE-3 */
+.accessibility {
+  background-color: yellowgreen;
+  color: darkblue;
+}
+
+/* Design guidelines for developers
+
+keep it simple: Simple designs are easier to understand and use
+
+Accessibility for all users => good contrast - readable fonts 
+
+use appropriate font-size => body 16px and heading larger 
+
+use appropriate font weight => if there is some important information
+
+Limit the number of fonts */
