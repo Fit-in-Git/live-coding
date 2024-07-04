@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Table -->
+    <!-- data wie text - link -->
+    <!-- tables => Tabellarische Info und NIE für layout -->
+    <!-- table => mit Tables können Entwickler Daten in Zeilen und Spalten anordnen. (row - column) -->
+    <!-- table tag -->
+    <!-- tr => table-row -->
+    <!-- th => table-header => makes our text bold and center -->
+    <!-- td => table-data -->
+    <h2>Playstation release list</h2>
+    <table style="width: 100%">
+      <tr>
+        <th>Playstation1</th>
+        <th>Playstation2</th>
+        <th>Playstation4</th>
+        <th>Playstation5</th>
+      </tr>
+      <tr>
+        <td>2000</td>
+        <td>2013</td>
+        <td>2020</td>
+      </tr>
+    </table>
+
+    <!-- EXAMPLE-2 -->
+    <!-- with head, body and foot is more semantic -->
+    <table>
+      <thead>
+        <tr>
+          <th>Car</th>
+          <th>Saving</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>VW</td>
+          <td>200€</td>
+        </tr>
+        <tr>
+          <td>Audi</td>
+          <td>400€</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>600€</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- EXAMPLE-3 -->
+    <!-- spanning rows and columns -->
+    <!-- colspan => number of columns to span -->
+    <!-- rowspan => number of rows to span -->
+    <!-- scope helps screen readers -->
+    <table class="a" style="width: 100%">
+      <tr>
+        <th colspan="2">Name</th>
+
+        <!-- scope => indicating that city is column headers  -->
+        <th scope="row">City</th>
+      </tr>
+      <tr>
+        <td>Andre</td>
+        <td>Semm</td>
+        <td>Berlin</td>
+      </tr>
+      <tr>
+        <td>Conny</td>
+        <td>Bolhaar</td>
+        <td>Hamburg</td>
+      </tr>
+    </table>
+
+    <!-- EXAMPLE-4 -->
+    <table style="width: 100%">
+      <tr>
+        <th>Name</th>
+        <td>Felix</td>
+      </tr>
+      <tr>
+        <th rowspan="3">Handy</th>
+        <td>111-111</td>
+      </tr>
+      <tr>
+        <td>222-222</td>
+      </tr>
+      <tr>
+        <td>333-333</td>
+      </tr>
+    </table>
+
+    <!-- EXAMPLE-5 -->
+    <h3>Welcome</h3>
+    <table style="width: 400px; height: 250px">
+      <tr>
+        <th colspan="2"></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td rowspan="3"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <!-- NOTICE -->
+    <!-- Accessibility: attribute => scope -->
+    <!-- scope: hat kein optische wirkung, es ist für Screen Reader -->
+    <!-- <th scope="col" or "row"> (if the header is for column or row ) -->
+
+    <!-- EXAMPLE-6 -->
+    <!-- non-semantic table  -->
+    <!-- <div class="table">
+      <div class="table-row">
+        <div class="table-cell">Header1</div>
+        <div class="table-cell">Header2</div>
+        <div class="table-cell">Header3</div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">Data1</div>
+        <div class="table-cell">Data2</div>
+        <div class="table-cell">Data3</div>
+      </div>
+    </div> -->
+
+    <!-- EXAMPLE-7 -->
+    <table>
+      <caption>
+        Additional Infos
+      </caption>
+      <tr>
+        <th>Username</th>
+        <th>E-Mail</th>
+      </tr>
+      <tr>
+        <td>Iman</td>
+        <td>ghaneiash@gmail.com</td>
+      </tr>
+    </table>
+  </body>
+</html>

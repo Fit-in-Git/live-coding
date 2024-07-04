@@ -1,0 +1,61 @@
+table,
+th,
+td {
+  border: 2px solid;
+
+  margin-top: 20px;
+
+  /* Default value is separate */
+  border-collapse: collapse;
+
+  /* Mit fixed => Wird unsere Table schneller gezeigt */
+  /* fixed => it ignores our content and give us the table width */
+  /* table-layout: auto (default) */
+  /* table-layout: fixed; */
+}
+
+/* pseudo child selectors */
+/* even or 2n (gerade) => 2 - 4 - 6 - 8 .... */
+/* odd or 2n+1 (ungerade) => 1 - 3 - 5 - 7 ... */
+/* 5n => 5 - 10 - 15 - 20 .... */
+/* erste drei elementen => (-n+3)*/
+/* (-0 + 3) = 3 / (-1 + 3)= 2 / (-2 + 3) = 1 */
+/* 3n+4 => (3 x 0) + 4 = 4 / (3 x 1) + 4 = 7 / (3 x 2) + 4 = 10 */
+
+tr:nth-child(-n+3) {
+  background-color: lightgreen;
+}
+
+
+/* EXAMPLE-3 */
+table.a {
+  text-align: center;
+}
+
+.a th:hover {
+  background-color: pink;
+}
+
+/* EXAMPLE-6 */
+/* .table {
+  display: table;
+  width: 100%;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  border: 2px solid red;
+  padding: 0.4em;
+} */
+
+/* EXAMPLE-7 */
+table caption {
+  /* caption-side => has 2 values => top (default)  and bottom */
+  caption-side: bottom;
+
+  text-align: left;
+}
