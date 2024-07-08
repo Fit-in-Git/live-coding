@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Form und Input -->
+
+    <!-- EXAMPLE-1 -->
+    <form>
+      <label for="Uname">UserName:</label>
+      <input type="text" id="Uname" value="" />
+    </form>
+    <hr />
+
+    <!-- EXAMPLE-2 -->
+    <form
+      action="https://formspree.io/f/mkgwneak"
+      method="POST"
+      target="_blank"
+    >
+      <label for="fname">FirstName:</label>
+      <input type="text" id="fname" name="firstname" />
+      <br />
+      <br />
+
+      <label for="lname">LastName:</label>
+      <input type="text" id="lname" name="lastname" />
+      <br />
+      <br />
+      <label for="order">Your Order:</label>
+      <input type="text" id="order" name="order" />
+
+      <!-- <button>Click</button> -->
+      <input type="submit" value="Go" />
+      <hr />
+
+      <!-- EXAMPLE-3 -->
+      <input type="text" />
+      <input type="password" />
+      <input type="email" />
+      <input type="color" />
+      <input type="week" />
+      <input type="month" />
+      <input type="time" />
+      <input type="search" />
+      <input type="range" min="1" max="7" />
+
+      <!-- accept => image/*, video/*, audio/* => all images, videos and audios -->
+      <!-- for example: accept = "image/png, image/jpeg" -->
+      <input type="file" accept="video/*" name="resume" />
+    </form>
+
+    <hr />
+    <!-- EXAMPLE-4 -->
+    <form
+      action="https://formspree.io/f/mkgwneak"
+      method="POST"
+      target="_blank"
+    >
+      <label for="m">
+        male
+        <input type="radio" id="m" name="gender" value="male" />
+      </label>
+      <label for="f">
+        female
+        <input type="radio" id="f" name="gender" value="female" />
+      </label>
+      <label for="k">
+        keine Angabe
+        <input type="radio" id="k" name="gender" value="keine" />
+      </label>
+
+      <!-- <button>Click</button> -->
+      <input type="submit" />
+      <hr />
+      <!-- EXAMPLE-5 -->
+      <label for="x">Vorname</label>
+      <input type="text" id="x" placeholder="Enter your name..." />
+    </form>
+
+    <hr />
+    <!-- EXAMPLE-6 -->
+    <h2>Welcome</h2>
+    <form action="" method="POST">
+      <fieldset>
+        <legend>Anmeldung</legend>
+        <label for="">Firstname:</label>
+        <input type="text" />
+        <label for="">Lastname:</label>
+        <input type="text" />
+        <label for="">E-Mail:</label>
+        <input type="email" />
+        <label for="">Birthday:</label>
+        <input type="date" />
+      </fieldset>
+    </form>
+    <hr />
+    <!-- EXAMPLE-7 -->
+    <form action="https://formspree.io/f/mkgwneak" method="POST">
+      <label for="">Choose your course</label>
+      <select name="courses" id="">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JS</option>
+        <option value="react">REACT</option>
+      </select>
+      <input type="submit" />
+    </form>
+    <p>Choose a country</p>
+    <select name="countries" id="">
+      <option value="Germany">Germany</option>
+      <option value="Japan">Japan</option>
+      <option value="Thailand">Thailand</option>
+    </select>
+    7
+    <!-- EXAMPLE-8 -->
+    <!-- rows = "7" displays 7 rows -->
+    <!-- cols = "30" displays 30 columns -->
+
+    <p>
+      <label for="txt">I am just textarea</label>
+    </p>
+    <textarea name="txt-area" id="txt" cols="30" rows="7"></textarea>
+    <hr />
+    <!-- EXAMPLE-9 -->
+    <p>Hobbies</p>
+
+    <input type="checkbox" value="sport" name="Hobbies" checked />Sport
+    <input type="checkbox" value="kino" name="Hobbies" />kino
+    <input type="checkbox" value="music" name="Hobbies" checked />Music
+    <input type="checkbox" value="car" name="Hobbies" />Car
+    <hr />
+    <!-- EXAMPLE-9.1 -->
+    <label for="a">
+      JS
+      <input type="checkbox" id="a" name="language" value="js" />
+    </label>
+    <label for="b">
+      React
+      <input type="checkbox" id="b" name="language" value="react" />
+    </label>
+    <hr />
+    <!-- EXAMPLE-10 -->
+    <form action="">
+      <label for="">Username</label>
+      <input type="text" id="" name="username" />
+      <label for="">Password</label>
+      <input type="password" id="" name="password" />
+      <label for="">between 1 - 5</label>
+      <input type="number" id="" name="number" min="1" max="6" />
+      <!-- Validation => pseudo classes :invalid - :valid (look the CSS file)-->
+      <!-- Validation => required => you cannot leave the input empty -->
+      <!-- pattern: [A-Za-z]{5,15} (between 5 and 15) oder {7} (means exact 7) -->
+      <!-- or [0-9] => means just numbers and combination [A-Za-z0-9]{1-8} -->
+      <!-- All symbols => .{1,5} -->
+      <!-- and we have maxlength that means => you have limit to write in input -->
+
+      <input
+        class="test"
+        type="text"
+        pattern="[A-Za-zäöüÄÖÜß]{1,5}"
+        maxlength="5"
+      />
+    </form>
+
+    <!-- EXAMPLE-11 -->
+    <label for="">datalist</label>
+    <input list="browser" name="browser" />
+    <datalist id="browser">
+      <option value="Chrome"></option>
+      <option value="Mozilla"></option>
+      <option value="Edge"></option>
+    </datalist>
+
+    <!-- EXAMPLE-12 -->
+    <label for="">Choose a Color</label>
+    <select name="color" id="">
+      <optgroup label="BLUE">
+        <option value="">Navy Blue</option>
+        <option value="">Light Blue</option>
+      </optgroup>
+      <optgroup label="GREEN">
+        <option value="">Light Green</option>
+        <option value="">Yellowgreen</option>
+      </optgroup>
+    </select>
+    <hr />
+    <!-- EXAMPLE-13 -->
+    <input class="test2" type="email" />
+  </body>
+</html>

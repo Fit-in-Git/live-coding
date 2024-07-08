@@ -1,0 +1,14 @@
+.test:invalid {
+  color: red;
+}
+.test:valid {
+  color: lightseagreen;
+}
+
+.test2:invalid {
+  border: 7px solid red;
+}
+
+.test2:valid {
+  border: 7px solid green;
+}
