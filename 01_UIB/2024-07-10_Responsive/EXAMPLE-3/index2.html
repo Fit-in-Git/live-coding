@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
+    <picture>
+      <source media="(min-width:1200px)" srcset="background.jpeg" />
+      <source media="(min-width:768px)" srcset="htmlcss.jpg" />
+      <img src="wolf.jpg" alt="Wolf" />
+    </picture>
+  </body>
+</html>
+<!-- 1. <picture> Element: this is a container (like a parent) -->
+<!-- It provide multiple sources for an image -->
+
+<!-- 2. <source> Elements: These elements specify different images -->
+
+<!-- 3. media="(min-width:1200px)": 
+this condition means the browser should use this source if the viewport (screen) width is at least 1200px -->
+
+<!-- If the screen width is 1200px or more, the browser will load => background.jpeg  -->
+<!-- If the screen width is between 768px and 1199px, the browser will load => htmlcss.jpg  -->
+<!-- If the screen width is less than 768px, the browser will load => wolf.jpg  -->

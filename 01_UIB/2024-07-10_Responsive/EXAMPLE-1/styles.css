@@ -1,0 +1,36 @@
+/* handy */
+body {
+  background-color: gray;
+}
+
+/* tablet => ipad =>  800px */
+/* Default is screen */
+/* media query */
+/* screen: only devices with screen */
+@media screen and (min-width: 800px) {
+  body {
+    background-color: yellow;
+    font-size: 25px;
+  }
+}
+
+/* laptops */
+@media screen and (min-width: 1100px) {
+  body {
+    background-color: green;
+    font-size: 40px;
+  }
+}
+
+/* Big Desktops */
+@media (min-width: 1600px) {
+  body {
+    background-color: aqua;
+  }
+}
+
+/* 1. extra small devices => less than 576px */
+/* 2. small devices => (between 576 - 768px) smartphones - ipad mini */
+/* 3. medium devices => (between 768px - 990px ) ipad - small laptops */
+/* 4. large devices => (between 990px - 1200px ) large laptops - Desktops */
+/* 5. large devices => (between 1200px - greater ) larger Desktops */
