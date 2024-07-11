@@ -1,0 +1,102 @@
+/* EXAMPLE-1 */
+.container {
+  border: 2px solid;
+  height: 400px;
+  display: flex;
+  /* flex-direction: row (default) - column - row-reverse - column-reverse */
+  /* flex-direction:  column  => justify-content => (main axis) => vertical */
+  /* and align-items => (cross axis) => Horizontal */
+
+  /* flex-start(Default) - flex-end / center / space-between / space-around / space-evenly */
+  /* Horizontal (main axis) */
+  justify-content: center;
+
+  /* Vertical (cross-axis) */
+  /* stretch (default) */
+  align-items: center;
+}
+
+.box {
+  background-color: lightcoral;
+  border: 1px solid;
+  width: 60px;
+  height: 75px;
+}
+
+/* EXAMPLE-2 */
+.menu {
+  display: flex;
+  background-color: greenyellow;
+  font-size: 1.5rem;
+  padding: 1em;
+  align-items: center;
+}
+
+.x,
+.y {
+  text-decoration: none;
+  color: red;
+  margin-right: 1rem;
+}
+
+.y {
+  margin-left: auto;
+}
+
+/* EXAMPLE-3 */
+/* justify-content and align-items */
+.test {
+  background-color: purple;
+  color: #fff;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* EXAMPLE-4 */
+/* flex-direction: row (default) */
+.container2 {
+  border: 2px solid green;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  background-color: #c4bbbb;
+  padding: 0.5em;
+  margin: 5px;
+  text-align: center;
+}
+
+/* EXAMPLE-5 */
+/* flex-wrap: nowrap(default) - wrap - wrap-reverse */
+.container3 {
+  border: 7px solid;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: stretch (default) - center - flex-start - flex-end - space-around - space-between  */
+  /* to move five and six to the top */
+  align-content: flex-start;
+}
+
+.styling {
+  width: 50px;
+  height: 50px;
+}
+
+/* EXAMPLE-6 */
+/* flex-flow: is shorthand => flex-direction and flex-wrap */
+.parent {
+  border: 4px solid green;
+  width: 220px;
+  height: 300px;
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  flex-flow: row wrap;
+  align-items: center;
+}
