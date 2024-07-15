@@ -1,0 +1,195 @@
+/* EXAMPLE-1 */
+/* flex-grow: Numbers (Integers) and by default is 0 */
+.container {
+  width: 550px;
+  height: 100px;
+  border: 2px solid;
+  background-color: antiquewhite;
+  display: flex;
+}
+
+.item-1 {
+  background-color: orange;
+  /* 1/11 */
+  flex-grow: 1;
+}
+
+.item-2 {
+  background-color: greenyellow;
+  /* 2/11 */
+  flex-grow: 2;
+}
+
+.item-3 {
+  background-color: lightpink;
+  /* 3/11 */
+  flex-grow: 3;
+}
+.item-4 {
+  background-color: lightskyblue;
+  /* 4/11 */
+  flex-grow: 4;
+}
+.item-5 {
+  background-color: purple;
+  /* 1/11 */
+  flex-grow: 1;
+}
+/* 11 flex-grow units */
+/* 1/11 */
+/* 2/11 */
+/* 3/11 */
+/* 4/11 */
+/* 1/11 */
+
+/* EXAMPLE-2 */
+header {
+  border: 2px solid;
+  display: flex;
+}
+
+h1 {
+  background-color: lightcoral;
+  margin: 0;
+  /* 1/3 */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  background-color: orange;
+  /* 2/3 */
+  flex-grow: 2;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+ul a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+/* EXAMPLE-3 */
+/* flex-shrink => default value => 1 */
+/* to prevent overflow */
+/* Numbers (Integers) */
+/* if one box (box1) has flex-shrink: 6 the the rest flex-shrink: 2 */
+/* that means that box1 shrinks 3x more than the rest */
+
+/* flex-basis => default value => auto */
+/* flex-basis => initial size of the item along main axis */
+/* flex-basis is just for flex items (flex container doesn't accept it) */
+/* flex-basis => is both width and height in a flexbox (it depends on flex-direction) */
+/* flex-basis will override any width and height */
+/* when flex-basis is auto => first, it check if there is any width and height, if not, it uses element content sizing */
+
+.test {
+  width: 550px;
+  border: 4px solid red;
+  display: flex;
+}
+
+.test div {
+  /* width: 200px; */
+  flex-basis: 200px;
+  /* flex-shrink: 1; */
+}
+.box {
+  flex-shrink: 1;
+}
+.box1 {
+  flex-shrink: 2;
+}
+
+/* flex: flex-grow flex-shrink flex-basis */
+/* flex: 0 1 auto */
+/* flex: 1 0 25% */
+
+/* EXAMPLE-4 */
+/* ORDER */
+/* order: default value is => 0 */
+/* Numbers (Integers) */
+.test1 {
+  width: 400px;
+  height: 150px;
+  border: 2px solid;
+  display: flex;
+}
+
+.test1 div {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
+.item1 {
+  order: 1;
+}
+.item2 {
+  order: 5;
+}
+.item3 {
+  order: 0;
+}
+.item4 {
+  order: 4;
+}
+.item5 {
+  order: 2;
+}
+
+/* EXAMPLE-5 */
+.test2 {
+  width: 240px;
+  height: 320px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+}
+
+/* align-self => cross axis and it override align-items */
+/* default value => auto / stretch - flex-start - flex-end - center and baseline */
+.self {
+  align-self: flex-start;
+}
+
+/* EXAMPLE-6 */
+.parent {
+  height: 400px;
+  background-color: black;
+  display: flex;
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  margin: auto;
+}
+
+/* EXAMPLE-7 */
+/* mobile first */
+
+.query {
+  display: flex;
+  flex-direction: column;
+}
+
+.query div {
+  background-color: green;
+  margin: 1px;
+  width: 10%;
+}
+
+@media (min-width:700px){
+  .query{
+    flex-direction: row;
+  }
+  .query div{
+    background-color: orange;
+  }
+}

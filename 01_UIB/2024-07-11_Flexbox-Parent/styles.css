@@ -81,6 +81,7 @@
   /* align-content: stretch (default) - center - flex-start - flex-end - space-around - space-between  */
   /* to move five and six to the top */
   align-content: flex-start;
+  column-gap: 10px;
 }
 
 .styling {
