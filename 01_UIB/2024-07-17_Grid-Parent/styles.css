@@ -1,0 +1,73 @@
+/* EXAMPLE-1 */
+.my-first-grid {
+  display: grid;
+
+  /* columns and rows with absolute units like px */
+  grid-template-columns: 200px 100px 250px;
+  grid-template-rows: 50px 50px;
+
+  /* auto will take the rest */
+  grid-template-columns: 100px auto 50px;
+
+  /* columns and rows with relative units like fraction */
+  /* 1000px screen => 1000 / 6 = 166.66px */
+  /* 1fr => 1 x 166.66px */
+  /* 2fr => 2 x 166.66px = 333.33px */
+  /* 3fr => 3 x 166.66px = 499.99*/
+  grid-template-columns: 1fr 2fr 3fr;
+
+  /* fr and px */
+  /* We assume that we have 1000px screen */
+  /* so here => 1000px - 250px = 750px */
+  grid-template-columns: 1fr 250px 3fr;
+
+  grid-template-columns: 250px 1fr;
+
+  /* % */
+  grid-template-columns: 200px 100px 50px;
+
+  /* minmax (min, max) */
+  grid-template-columns: minmax(100px, 300px) minmax(200px, 2fr) minmax(
+      50px,
+      1fr
+    );
+
+  grid-template-columns: minmax(100px, 1fr) 1fr 1fr;
+
+  /* repeat */
+  /* grid-template-columns: 1fr 1fr 1fr; => repeat(3, 1fr) */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* grid-template-columns: 100px 100px 100px; => repeat(3, 100px) */
+  grid-template-columns: repeat(3, 100px);
+
+  /* 2fr 1fr 1fr */
+  grid-template-columns: 2fr repeat(2, 1fr);
+
+  /* repeat and minmax together */
+  grid-template-columns: repeat(2, minmax(300px, 700px));
+  grid-template-rows: 100px 100px 50px;
+
+  grid-template-rows: 100px;
+  grid-auto-rows: 150px;
+  /* Exactly the same with columns => grid-auto-columns */
+
+  /* gap => space between columns and rows */
+  /* gap => both (columns and rows) */
+  /* gap: 7px; */
+  /* column-gap: 10px; */
+  /* row-gap: 15px; */
+
+  /* both together with different values */
+  gap: 3px 10px;
+
+  /* SHORTHAND */
+  /* rows / columns */
+  grid-template: 200px 100px 70px / 50px 70px;
+
+  /* grid-auto-flow: row (default value) */
+  /* By default, items are placed row by row */
+  /* grid-auto-flow property can change this behavior to place item column by column  */
+  /* When you set grid-auto-flow to column => the items are placed column by column */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow */
+}
