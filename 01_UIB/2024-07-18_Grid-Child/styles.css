@@ -145,6 +145,9 @@
   /* vertically and it is the same as justify-content */
   align-content: center;
 
+  /* justify-content and align-content => place-items */
+  /* place-content: start space-evenly; */
+
   /* horizontally */
   /* stretch (default), start, end, center */
   justify-items: end;
