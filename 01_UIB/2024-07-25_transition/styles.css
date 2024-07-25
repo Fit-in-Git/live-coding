@@ -1,0 +1,181 @@
+.main {
+  border: 2px solid;
+}
+
+/* EXAMPLE-1 */
+.container {
+  display: inline-block;
+  width: 150px;
+  border: 2px solid;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid;
+}
+
+.box {
+  height: 40px;
+  width: 40px;
+  font-size: 0.7rem;
+  margin: 50px auto;
+  border: 2px solid;
+}
+
+/* transition-property: all => default value */
+/* transition-duration: 0 => default value */
+
+.box1 {
+  background-color: cornflowerblue;
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.box2 {
+  background-color: lime;
+  transition-property: font-size;
+  font-size: 30px;
+  transition-duration: 3s;
+}
+
+.box3 {
+  background-color: chocolate;
+
+  /* you can use shorthand for transition  */
+  transition: all 6s;
+}
+
+/* EXAMPLE-2 */
+.example2 {
+  font-size: 48px;
+  margin-left: 200px;
+  transition: font-size 4s, margin-left 6s;
+  /* transition-property: font-size, margin-left;
+  transition-duration: 7s; */
+
+  /* font means all property that starts with font  */
+  /* margin means all property that starts with margin  */
+  transition: font 4s, margin 4s;
+}
+
+.example2:hover {
+  font-size: 80px;
+  margin-left: 10px;
+}
+
+/* EXAMPLE-3 */
+.example3 {
+  background-color: orange;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.3em 1em;
+  transition: all 2.4s;
+}
+.example3:hover {
+  background-color: lightseagreen;
+  border-radius: 14px;
+}
+
+/* EXAMPLE-4 */
+/* transition-timing-function */
+/* ease => default value => slow start - then fast - end slow*/
+/* ease-in => slow start */
+/* ease-out => slow end */
+/* ease-in-out => slow start -  slow end */
+/* linear => same speed from start to end */
+.example4 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  transition: width 3s linear;
+  /* transition-timing-function: linear; */
+  /* there is cubic-bazier, from 0 to 1 */
+  /* step-start, step-end, steps(int, start or end) */
+}
+.example4:hover {
+  width: 400px;
+}
+
+/* EXAMPLE-5 */
+.test {
+  width: 100px;
+  height: 50px;
+  background: #164e64;
+  color: white;
+  margin: 6px;
+  transition: width 2s;
+}
+
+.a {
+  transition-timing-function: linear;
+}
+.b {
+  transition-timing-function: ease;
+}
+.c {
+  transition-timing-function: ease-in;
+}
+.d {
+  transition-timing-function: ease-out;
+}
+.e {
+  transition-timing-function: ease-in-out;
+}
+
+.test:hover {
+  width: 350px;
+}
+
+/* https://www.w3schools.com/cssref/css3_pr_transition-timing-function.php */
+
+/* for cubic-bezier:
+https://www.w3schools.com/cssref/func_cubic-bezier.php
+*/
+
+/* for steps::after
+https://www.geeksforgeeks.org/how-to-use-steps-method-in-css-animations/
+*/
+
+/* EXAMPLE-6 */
+input {
+  width: 100px;
+  transition: width 2s ease-in 4s;
+  /* transition-delay: 4s; */
+}
+input:focus {
+  width: 200px;
+}
+
+/* EXAMPLE-7 */
+.image {
+  width: 500px;
+  height: 500px;
+  border: 2px solid red;
+}
+.image img {
+  width: 100%;
+  transition: transform 1s ease-out;
+}
+
+.image:hover img {
+  transform: scale(1.2);
+  transform: rotate(20deg);
+
+  /* combination */
+  transform: scale(1.6) rotate(45deg);
+
+  /* x-axis => 30deg / y-axis => 50deg */
+  transform: skew(30deg, 50deg);
+
+  transform: translate(50px); /* move 50px to the right*/
+  transform: translate(150px, 60px);
+  transform: translateX(50px);
+  transform: translateY(-30px);
+  transform: translateX(50px) translateY(100px) rotate(30deg);
+
+  transform: translate(calc(50% + 10px), calc(-50% - 20px));
+}
+/* transition - animation */
+/* transition => start and end (two states) */
+/* animation => more than 2 states - endless animation */
