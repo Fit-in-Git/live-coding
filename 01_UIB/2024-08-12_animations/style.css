@@ -1,0 +1,175 @@
+/* EXAMPLE-1 */
+/* from - to */
+.first-example {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+  animation-name: example-1;
+  /* duration => default is 0 */
+  animation-duration: 7s;
+}
+
+@keyframes example- {
+  /* 0% */
+  from {
+    background-color: orange;
+  }
+  /* 100% */
+  to {
+    background-color: blue;
+  }
+}
+
+/* EXAMPLE-2 */
+/* % */
+.second-example {
+  background-color: #f96230;
+  width: 200px;
+  height: 200px;
+  animation-name: example-2;
+  animation-duration: 20s;
+  /* animation-timing-function: linear; */
+}
+
+@keyframes example- {
+  0% {
+    background-color: beige;
+  }
+  25% {
+    background-color: blueviolet;
+  }
+  50% {
+    background-color: darkolivegreen;
+  }
+  100% {
+    background-color: aqua;
+  }
+}
+
+/* EXAMPLE-3 */
+.third-example {
+  background-color: #4f46e5;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  animation: example-3 4s linear;
+}
+
+@keyframes example- {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.third-example:hover {
+  /* default value is running */
+  animation-play-state: paused;
+}
+
+/* EXAMPLE-4 */
+.fourth-example {
+  background-color: #14b8;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: example-4 5s linear 3;
+  /* animation-iteration-count: int or num (like 1 2 7 17 60) or infinite; */
+  /* animation-delay */
+  /* animation-direction: normal => default value */
+  /* reverse => backwards */
+  /* alternate => first =>  forwards and then backwards */
+  /* alternate-reverse => first => backwards and then forwards */
+  animation-direction: alternate;
+}
+
+@keyframes example- {
+  0% {
+    background-color: gold;
+    left: 0;
+    top: 0;
+  }
+  25% {
+    background-color: goldenrod;
+    left: 300px;
+    top: 0;
+  }
+  50% {
+    background-color: orange;
+    left: 300px;
+    top: 300px;
+  }
+  75% {
+    background-color: yellow;
+    left: 0;
+    top: 300px;
+  }
+  100% {
+    background-color: red;
+    left: 0;
+    top: 0;
+  }
+}
+
+/* EXAMPLE-5 */
+.btn {
+  background-color: #7dd3fc;
+  margin-top: 30px;
+  padding: 0.7em 1.2em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px;
+  animation: btn 1s infinite;
+}
+
+.btn:hover {
+  background-color: #0369a1;
+  color: #fff;
+  /* animation: none; */
+  animation-play-state: paused;
+}
+
+@keyframes btn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    /* transform: translateX(300px); */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* EXAMPLE-6 */
+.fill {
+  background-color: brown;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  animation: example-6 7s 2s;
+
+  /* animation-fill-mode: none (default value) */
+  /* forwards => brown => orange => lightsalmon => lightskyblue */
+  /* backwards => orange => lightsalmon => lightskyblue => brown */
+  /* both => orange => lightsalmon => lightskyblue */
+  animation-fill-mode: both;
+}
+@keyframes example-6 {
+  0% {
+    background-color: orange;
+  }
+  50% {
+    background-color: lightsalmon;
+  }
+  100% {
+    background-color: lightskyblue;
+  }
+}
