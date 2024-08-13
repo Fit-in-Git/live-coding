@@ -1,0 +1,72 @@
+body {
+  background-color: #34d399;
+}
+
+.container {
+  font-size: 3em;
+  margin: 60px;
+  color: #0284c7;
+}
+
+p {
+  color: rgb(255, 0, 43);
+}
+
+span {
+  color: rgb(255, 0, 43);
+}
+
+.myClass {
+  display: flex;
+  justify-content: space-between;
+}
+.myClass li {
+  list-style: none;
+  background-color: lightpink;
+}
+.myClass:hover li {
+  background-color: black;
+}
+
+.nested {
+  background-color: lightblue;
+}
+.nested p {
+  color: lightseagreen;
+}
+
+ul > li {
+  background-color: bisque;
+}
+
+section {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Arial";
+}
+
+.mix {
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: aqua;
+  color: green;
+}
+.mix h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.mix p {
+  font-size: 30px;
+}
+.mix button {
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: aqua;
+  color: green;
+  background-color: blue;
+  color: orange;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

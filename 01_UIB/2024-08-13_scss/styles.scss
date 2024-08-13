@@ -1,0 +1,97 @@
+// EXAMPLE-1: variable
+$bg-color: #34d399;
+$myColor: #0284c7;
+$size: 1em;
+$myWidth: 200px;
+
+body {
+  background-color: $bg-color;
+}
+
+.container {
+  font-size: $size * 3;
+  // font-size: $size / 3;
+  margin: $myWidth * 0.3;
+  color: $myColor;
+}
+// $myColor: yellow;
+p {
+  $myColor: rgb(255, 0, 43);
+  color: $myColor;
+}
+span {
+  color: $myColor;
+}
+
+// EXAMPLE-3: nested rules
+.myClass {
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    list-style: none;
+    background-color: lightpink;
+  }
+
+  &:hover li {
+    background-color: black;
+  }
+}
+
+// EXAMPLE-4: nested rules
+.nested {
+  background-color: lightblue;
+
+  p {
+    color: lightseagreen;
+  }
+}
+
+// EXAMPLE-5: nested rules
+
+ul > {
+  li {
+    background-color: bisque;
+  }
+}
+
+// EXAMPLE-6: nested properties
+section {
+  text: {
+    transform: uppercase;
+    align: center;
+  }
+
+  font: {
+    size: 30px;
+    family: "Arial";
+  }
+}
+
+// EXAMPLE-7: Mixin
+@mixin playstation-style {
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: aqua;
+  color: green;
+}
+
+.mix {
+  @include playstation-style;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+
+  button {
+    @include playstation-style;
+    background-color: blue;
+    color: orange;
+    cursor: pointer;
+  }
+}

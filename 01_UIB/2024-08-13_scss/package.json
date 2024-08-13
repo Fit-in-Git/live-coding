@@ -1,0 +1,16 @@
+{
+  "name": "2024-08-13_scss",
+  "version": "1.0.0",
+  "description": "How to use scss:",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch styles.scss style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.77.8"
+  }
+}
