@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-orange-500">
+    <!-- EXAMPLE-1 -->
+    <h2 class="text-blue-800 uppercase">Welcome to Tailwind</h2>
+    <p class="hover:uppercase hover:bg-yellow-300">Hover on me please</p>
+
+    <!-- EXAMPLE-2 -->
+    <!-- p => padding  -->
+    <!-- px => padding-left right -->
+    <!-- py => padding-top bottom -->
+    <!-- pt => padding-top -->
+    <!-- pb => padding-bottom -->
+    <!-- pr => padding-right -->
+    <!-- pl => padding-left -->
+    <!-- values => p-1 p-2 p-2.5 ..... or p-[100px] -->
+
+    <!-- m => margin  -->
+    <!-- px => padding-left right -->
+    <!-- py => padding-top bottom -->
+    <!-- pt => padding-top -->
+    <!-- pb => padding-bottom -->
+    <!-- pr => padding-right -->
+    <!-- pl => padding-left -->
+    <!-- values => p-1 p-2 p-2.5 ..... or p-[100px] -->
+
+    <!-- margin is exactly the same -->
+    <p class="bg-slate-400 p-5 mt-2.5 hover:text-yellow-400">
+      Padding & margin
+    </p>
+
+    <!-- EXAMPLE-3: position => fixed sticky relative absolute -->
+
+    <!-- WIDTH and HEIGHT => w-20 or with px => h-[424px]  -->
+    <!-- w-full => width: 100% / h-full => height: 100% -->
+    <!-- w-screen => width: 100vw / h-screen => height: 100vh -->
+
+    <!-- There is z-index as well => z-10 or -z-10 -->
+    <header class="bg-lime-400 fixed top-[102px] right-0 z-10">
+      <h1>start</h1>
+    </header>
+
+    <div class="bg-purple-400 h-28 relative mt-6">
+      <p>I am relative</p>
+      <div class="absolute top-0 left-1/2">
+        <p>I am absolute</p>
+      </div>
+    </div>
+
+    <!-- EXAMPLE-4: flex and border -->
+    <!-- flex justify-content items-center -->
+    <!-- border => border-width: 1px or border-[10px]-->
+    <!-- border-0 => border-width: 0px -->
+    <!-- border-2 => border-width: 2px -->
+    <!-- border-4 => border-width: 4px -->
+    <!-- border-8 => border-width: 8px -->
+    <!-- border-x-0-2-4-8 => border-left and right: px -->
+    <!-- border-y-0-2-4-8 => border-top and bottom: px -->
+    <!-- border-t- / border-r- / border-b- / border-l- -->
+    <!-- border-radius: rounded-sm (2px) rounded-md(6px) rounded-lg(8px) rounded-xl or 2xl or 3xl rounded-full -->
+    <div
+      class="flex justify-center items-center border-8 border-green-500 h-40 rounded-lg"
+    >
+      <div>Number1</div>
+      <div class="mx-5">Number2</div>
+      <div>Number3</div>
+    </div>
+
+    <!-- sm => 640px (min-width) -->
+    <!-- md => 768px (min-width) -->
+    <!-- lg => 1024px (min-width) -->
+    <!-- xl => 1280px (min-width) -->
+    <!-- 2xl => 1536px (min-width) -->
+    <!-- mx stand for margin-left and right -->
+    <div class="w-full">
+      <img
+        class="w-96 mx-auto md:w-[500px] lg:w-[800px]"
+        src="../messi.jpg"
+        alt="messi"
+      />
+    </div>
+  </body>
+</html>

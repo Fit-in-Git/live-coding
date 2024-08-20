@@ -1,0 +1,63 @@
+body {
+  background-color: green;
+}
+
+p {
+  color: white;
+  font-size: 40px;
+}
+
+.myDiv p {
+  color: blue;
+}
+.myDiv section {
+  color: orange;
+}
+.heading {
+  font-family: Arial, Helvetica, sans-serif;
+  color: yellow;
+  font-size: 22px;
+  font-size: 26px;
+}
+
+.paragraph {
+  font-family: Arial, Helvetica, sans-serif;
+  color: yellow;
+  font-size: 22px;
+  font-size: 15px;
+}
+
+.btn {
+  border-radius: 7px;
+}
+
+.card {
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.myDiv {
+  border: 1px solid orange;
+  padding: 7px;
+  margin: 12px;
+  background-color: pink;
+}
+
+.myDiv2 {
+  border: 1px solid lightblue;
+  padding: 10px;
+  margin: 12px;
+}
+
+.base-style, .example, .message {
+  padding: 17px;
+  margin: 8px;
+  border: 12px solid #0c9bbf;
+}
+
+.message, .example {
+  background-color: #991b1b;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

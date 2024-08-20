@@ -1,0 +1,103 @@
+// EXAMPLE-1
+// variable
+// $bg-color: green;
+// $text-color: white;
+// $text-size: 20px;
+@import "variables";
+
+body {
+  background-color: $bg-color;
+}
+
+p {
+  color: $text-color;
+  font-size: $text-size * 2;
+}
+
+// ------------------------
+
+.myDiv {
+  
+  p {
+
+    color: blue;
+
+
+  }
+
+  section {
+    color: orange;
+    span {
+       
+    }
+  }
+  section span{
+
+  }
+}
+
+// EXAMPLE-2
+@mixin text-style {
+  font-family: Arial, Helvetica, sans-serif;
+  color: yellow;
+  font-size: 22px;
+}
+
+.heading {
+  @include text-style;
+  font-size: 26px;
+}
+
+.paragraph {
+  @include text-style;
+  font-size: 15px;
+}
+
+// EXAMPLE-3
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+.btn {
+  @include border-radius(7px);
+}
+
+.card {
+  @include border-radius(12px);
+  background-color: #fff;
+}
+
+// EXAMPLE-4
+@mixin border-box($border-color, $padding-size) {
+  border: 1px solid $border-color;
+  padding: $padding-size;
+  margin: 12px;
+}
+
+.myDiv {
+  @include border-box(orange, 7px);
+  background-color: pink;
+}
+
+.myDiv2 {
+  @include border-box(lightblue, 10px);
+}
+
+// EXAMPLE-5: extend
+.base-style {
+    padding: 17px;
+    margin: 8px;
+    border: 12px solid #0c9bbf;
+}
+
+.message{
+    @extend .base-style;
+    background-color: #991b1b;
+    color: #fff;
+}
+
+// EXAMPLE-6 
+.example{
+    @extend .base-style;
+    @extend .message;
+}
