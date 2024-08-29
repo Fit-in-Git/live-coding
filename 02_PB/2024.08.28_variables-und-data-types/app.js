@@ -117,3 +117,74 @@ const laptop = "Sony";
 // var sport = "Tennis";
 // console.log(sport);
 // console.log(sport);
+
+// -----------
+// Hoisting
+
+// 1.
+console.log(num); // undefined
+var num;
+num = 6;
+
+// 2.
+// var x = 1;
+// console.log(x + y);
+// var y = 2;
+
+// 3.
+// console.log(laptopName); //  ERROR
+let laptopName = "Lenovo";
+laptopName = "HP";
+
+// console.log(hello); // ERROR
+const hello = "hi";
+
+console.log(num1); // undefined
+var num1 = 3;
+
+// console.log(num2); // Error
+let num2 = 3;
+
+var handy = 1000;
+console.log(handy + "  " + car1); // 1000  undefined
+var car1 = 200;
+
+// Naming variables: variables starts with lowercase letter
+// If you want to give age, the write age and not x, because u can read better
+// Variables cannot use space, you can use UNDERSCORE _
+// You cannot start a variable with a number like => let 1age = 20;
+// camelCase - snake_case
+
+// BigInt
+// you cannot calculate a bigInt with normal number, there is an error
+let m = 50000000000n;
+let n = 10000;
+
+console.log(3 ** 3);
+console.log(2 ** 53); // 9007199254740991n
+// console.log(m + n); // Error
+
+// variables in memory
+// JavaScript has two kind of data types
+// 1. Primitive => number string boolean
+// 2. Reference or object data types => array object
+
+// PRIMITIVE => stores in STACK
+let carName = "Audi";
+let newCar = carName;
+console.log(newCar); // Audi
+carName = "Mercedes";
+console.log(carName); // Mercedes
+console.log(newCar); // Audi
+
+// REFERENCE => Stores in HEAP
+let obj = {
+  firstName: "Conny",
+  age: 18,
+};
+
+let newObj = obj;
+console.log(newObj); // { firstName: 'Conny', age: 18 }
+newObj.age = 20;
+console.log(newObj); // { firstName: 'Conny', age: 20 }
+console.log(obj); // { firstName: 'Conny', age: 20 }
