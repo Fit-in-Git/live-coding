@@ -36,7 +36,19 @@ console.log(result3); // o worl (with minus we start from the right)
 console.log(text);
 
 // substring()
-// (7, -1) => (-1, 7) => (0, 7)
+// substring
+// The slice() does not change our original string
+// string.slice(start, stop)
+const text2 = "Hello, world";
+let x1 = text2.substring(0, 9);
+console.log(x1); // Hello, wo
+let x2 = text2.substring(3, 2); // (it will swapping) => (3,2) => (2,3)
+console.log(x2);
+
+let x3 = text2.substring(-3); // if start is less than 0 like (-1 or -2) => it will start with 0
+let x4 = text2.substring(7, -1); // (0,7)
+
+console.log(text2); // Hello, world
 
 // trim()=> remove whitespace
 const text3 = "       hello world";
