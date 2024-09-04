@@ -291,3 +291,7 @@ console.log(num5);
 // 1 - 10
 let num7 = Math.floor(Math.random() * 10 + 1);
 console.log(num7);
+
+
+
+EXAMPLE-4
