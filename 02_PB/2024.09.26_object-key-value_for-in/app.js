@@ -120,3 +120,11 @@ for (const [sport, min] of getBoth) {
 // football is 90 minutes
 // basketball is 48 minutes
 // iceHockey is 60 minutes
+
+function powerOf(num) {
+  return num ** 2;
+}
+console.log(powerOf(2));
+console.log(powerOf(3));
+console.log(powerOf(4));
+console.log(powerOf(5));
