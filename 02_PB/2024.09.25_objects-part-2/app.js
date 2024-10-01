@@ -191,3 +191,36 @@ myName2.greeting2 = z;
 myName2.greeting2(); // Biggie is here
 
 myName2["greeting2"](); // Biggie is here
+
+// -----------------------------------
+// --------------
+// Nested Object
+const sports = {
+  football: {
+    league: "Bundesliga",
+    teams: {
+      bayernMunich: {
+        name: "FC Bayern",
+        city: "Munich",
+        stadium: "Allianz Arena",
+        players: [
+          { name: "Manuel Neuer", position: "Goalkeeper", number: 1 },
+          { name: "Thomas Müller", position: "Forward", number: 25 },
+        ],
+        manager: "Vincent Kompany",
+      },
+      borussiaDortmund: {
+        name: "BVB",
+        city: "Dortmund",
+        stadium: "Signal Iduna Park",
+        players: [
+          { name: "Marco Reus", position: "Midfielder", number: 11 },
+          { name: "Julian Brandt", position: "Midfielder", number: 10 },
+        ],
+        manager: "Nuri Şahin",
+      },
+    },
+  },
+};
+console.log(sports.football.teams.bayernMunich.players[0].name); // Manuel Neuer
+console.log(sports.football.teams.borussiaDortmund.manager); // Nuri Şahin
