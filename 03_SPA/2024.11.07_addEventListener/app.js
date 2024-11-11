@@ -41,7 +41,7 @@ button.addEventListener("click", clickHandler);
 const myDiv = document.getElementById("myDiv1");
 
 myDiv.addEventListener("mouseenter", () => {
-  myDiv.style.cssText = `background:hotpink; color:white`;
+  myDiv.style.cssText = `background:hotPink; color:white`;
 });
 
 myDiv.addEventListener("mouseleave", () => {
@@ -58,6 +58,14 @@ myInput.addEventListener("keyup", function (e) {
 });
 
 // try with keydown
+
+// KEYBOARD EVENTS:
+// keydown => key is pressed
+// keyup => key is released
+// keypress => when key is pressed and released
+
+// MOUSE EVENTS:
+// click - dblclick
 
 // resize (WITHOUT HTML)
 window.addEventListener("resize", () => {
@@ -96,3 +104,59 @@ function removeHandler() {
 }
 
 btn2.addEventListener("click", removeHandler);
+
+// EXAMPLE-6: DOMContentLoaded
+// DOMContentLoaded => it waits for => videos, images, scripts
+// DOMContentLoaded => waits only for HTML document
+
+document.addEventListener("DOMContentLoaded", () => {
+  let y = document.getElementById("myD");
+  setTimeout(() => {
+    y.textContent = "Completed!!!!!!!!🍻";
+  }, 5000);
+  // 5000 => means 5sec
+  // OR
+  // y.textContent = "Completed!!!!!!!!🍻";
+});
+
+// EXAMPLE-7: event
+const button3 = document.querySelector("#myButton3");
+
+function clickTest(event) {
+  console.log("Event Object:", event);
+  console.log("Event Type:", event.type);
+  console.log("Event Target:", event.target);
+}
+
+button3.addEventListener("click", clickTest);
+
+// EXAMPLE-8: form
+const form = document.querySelector("#myForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("Sent!🎊");
+});
+
+// EXAMPLE-8.1
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // target element with id / with dot notation or bracket notation
+  let nameValue = event.target.elements.myName.value;
+  let emailValue = event.target.elements["myEmail"].value;
+
+  // target element with name
+  let nameValueName = event.target.elements.fullName.value;
+  let emailValueEmail = event.target.elements["email"].value;
+
+  console.log(`Welcome ${nameValue}`);
+  console.log(`Your E-Mail is ${emailValue}`);
+
+  // element.value
+  let input = form.querySelectorAll("input");
+  let myUser = input[0].value;
+  console.log("++++++++", myUser);
+
+  let myEmail = input[1].value;
+  console.log("++++++++", myEmail);
+});
