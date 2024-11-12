@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- EXAMPLE-1: propagation -->
+    <div id="parent">
+      <ul>
+        <li>
+          <button>
+            <h4>Parent</h4>
+          </button>
+        </li>
+        <li>
+          <button id="child">
+            <p>Child</p>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- EXAMPLE-2: target vs. currentTarget  -->
+    <div id="parent2">
+      <button class="child">Btn1</button>
+      <button class="child">Btn2</button>
+    </div>
+
+    <!-- EXAMPLE-3: target vs. currentTarget  -->
+    <div id="myParent">
+      Parent Div
+      <div>First child</div>
+      <div>Second child</div>
+    </div>
+
+    <!-- EXAMPLE-4: Performance impact -->
+    <div id="parent3">
+      <button class="child">button1</button>
+      <button class="child">button2</button>
+      <button class="child">button3</button>
+    </div>
+
+    <!-- EXAMPLE-5: delegation -->
+    <ul id="myList">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <script src="app.js"></script>
+  </body>
+</html>
