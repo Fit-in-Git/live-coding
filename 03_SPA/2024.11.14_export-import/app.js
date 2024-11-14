@@ -1,3 +1,24 @@
+// Modules
+// Durch die Aufteilung deine Codes in kleinere Datei
+// It becomes easier to manage and understand
+
+// Immediately Invoke Function Expressions
+// IIFEs (old trick)
+// let myFunc =(function(){
+//     let privateX = "I am private variable";
+//     function privateFunc(){
+//         console.log("I am private func")
+//     }
+//     return{
+//         publicVar: "I am public",
+//         publicFun: function(){
+//             console.log("I am public func")
+//         }
+//     }
+// })();
+// console.log(myFunc.publicVar)
+// myFunc.publicFun();
+
 // ES6
 // JS modules => we have two keywords => export - import
 
@@ -77,5 +98,3 @@ const x3 = {
 const number = 400;
 
 export { x1, x2, x3, number };
-
-
