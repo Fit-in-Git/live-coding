@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <!-- There is 3 ways -->
+    <!-- 1. without attribute: it starts parsing DOM and when reaches to script tag and -->
+    <!-- it starts to parse app.js, so when parsing JS is done, it moves to the next line -->
+    <!-- So this is render blocking (BLOCKS HTML LOADING) -->
+    <!-- <h2 id="a">Hey</h2>
+    <script src="app.js"></script> -->
+
+    <!-- in app.js -->
+    <!-- const x = document.querySelector("#a"); x.addEventListener("click", () => {
+    x.style.background = "green"; }); -->
+
+    <!-- 2. with async attribute: that means asynchronous => Browser starts parsing the DOM -->
+    <!-- when it reaches script tag -->
+    <!-- it parse my JS file and HTML file at the same time and the Browser doesn't wait for JS file  -->
+    <!-- and continued to load HTML as well  -->
+    <!-- LOADS IN BACKGROUND -->
+    <!-- <script async src="app.js"></script> -->
+    <!-- <h2 id="a">Hey</h2> -->
+
+    <!-- in app.js -->
+    <!-- const x = document.querySelector("#a"); x.addEventListener("click", () => {
+    x.style.background = "green"; }); -->
+
+    <!-- 3. with defer attribute: Browser starts parsing the DOM when it reaches to script tag  -->
+    <!-- and it starts parse my JS file and the HTML file at the same time, but it will wait for HTML to parsed completely -->
+    <!-- So you are sure that you have access to all elements in HTML with your JS file -->
+    <h2 id="a">Hey</h2>
+
+    <!-- in app.js -->
+    <!-- const x = document.querySelector("#a"); x.addEventListener("click", () => {
+    x.style.background = "green"; }); -->
+
+    <button>Click to fetch</button>
+    <ul></ul>
+    <h3>hello</h3>
+  </body>
+</html>
+
+<!-- Best choice is defer -->
