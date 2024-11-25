@@ -188,7 +188,7 @@ const myFetch1 = async (e) => {
       nameOfCity: cityName,
     };
     try {
-      const response = await fetch(url, {
+      const response = await fetch(url1, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
