@@ -141,7 +141,13 @@ async function sendData1() {
 }
 
 sendData1();
-
+// ----------------------------------------------------------------
+// CREATE A JSON FILE
+// 1. Create a new file => db.json
+// 2. Define your API in json file
+// 3. npm install -g json-server
+// 4. json-server --watch db.json
+// 5. open your API link => http://localhost:3000/users
 // EXAMPLE-2
 const url = "http://localhost:3000/users";
 
@@ -246,7 +252,7 @@ const deleteCity = async (id) => {
     await fetch(`${url}/${id}`, {
       method: "DELETE",
     });
-    cities()
+    cities();
   } catch (error) {
     console.log(error);
   }
