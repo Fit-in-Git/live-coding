@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "214d",
+      "city": "Berlin"
+    },
+    {
+      "id": "c9a4",
+      "city": "Köln"
+    },
+    {
+      "id": "0320",
+      "nameOfCity": "Las Vegas"
+    }
+  ]
+}
