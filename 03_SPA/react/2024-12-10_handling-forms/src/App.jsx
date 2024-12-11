@@ -3,6 +3,7 @@ import ControlledInput from "./components/ControlledInput";
 import Counter from "./components/Counter";
 import SignUpForm from "./components/SignUpForm";
 import SignUpForm2 from "./components/SignUpForm2";
+import SubmitComponent from "./components/SubmitComponent";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <Counter /> */}
       {/* <ControlledInput /> */}
       {/* <SignUpForm /> */}
-      <SignUpForm2 />
+      {/* <SignUpForm2 /> */}
+      <SubmitComponent />
     </div>
   );
 }
