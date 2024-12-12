@@ -1,0 +1,10 @@
+$color1: lime;
+
+.btn {
+  background-color: $color1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color1, 20%);
+  }
+}
