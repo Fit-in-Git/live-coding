@@ -1,0 +1,9 @@
+.footer-style {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: aquamarine;
+  text-align: center;
+  padding: 1.5em;
+}
