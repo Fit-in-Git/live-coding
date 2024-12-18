@@ -1,0 +1,29 @@
+.header {
+  background-color: "#dbeafe";
+  padding: 15px;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navItem {
+  margin: 0 8px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.navLink:hover {
+  color: #680d8f;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
