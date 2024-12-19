@@ -9,7 +9,7 @@ const Navigation = () => {
     { name: "Contact Us", to: "/contact-us", id: 3 },
     { name: "Products", to: "/our-products", id: 4 },
     { name: "Services", to: "/services", id: 5 },
-
+    { name: "Blogs", to: "/blog", id: 6 },
   ];
 
   return (

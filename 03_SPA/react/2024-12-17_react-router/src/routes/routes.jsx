@@ -1,4 +1,6 @@
 import AboutUs from "../components/AboutUs";
+import BlogPage from "../components/BlogPage";
+import Blogs from "../components/Blogs";
 import ContactUs from "../components/ContactUs";
 import HomePage from "../components/HomePage";
 import NotFound from "../components/NotFound";
@@ -21,8 +23,12 @@ const routes = [
     ],
     id: 5,
   },
+  { path: "/blog", element: <BlogPage />, id: 6 },
+  { path: "/blog-page/:id", element: <Blogs />, id: 7 },
 
-  { path: "*", element: <NotFound />, id: 6 },
+  { path: "*", element: <NotFound />, id: 8 },
 ];
 
 export default routes;
+// :id => it makes our id dynamic
+// you can choose another names except id, so no problem
