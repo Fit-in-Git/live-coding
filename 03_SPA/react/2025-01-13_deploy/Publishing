@@ -1,0 +1,58 @@
+PUBLISHING
+
+1. with GitHub 
+ - npm create vite@latest (create your react)
+ - npm install gh-pages
+ - In Package.json, at the top => "homepage": "https://<Your GitHub ID>.github.io/<REPO NAME>" 
+ - In Package.json => scripts =>  "pre-deploy": "npm run build", "deploy": "gh-pages -d dist"
+ - vite.config.js: base: "<REPO>"
+ 
+In GitHub make a new Repo
+In your local project => git init => git add . => git commit -m "" => git remote (in GitHub) => git push origin master
+
+- npm run pre-deploy
+- npm run deploy
+
+You want to change sth in your project?
+ - git add .
+ - git commit -m ""
+ - git push
+ - npm run pre-deploy
+ - npm run deploy
+ 
+ ----------------------------------------------------------------
+ 
+ 2. with Netlify
+ 
+ MANUALLY
+  - npm run build
+  - go to Netlify and sign in (with your GitHub)
+  - Add New Site => Deploy manually
+  - Drag and drop your dist folder
+  
+  For Updates:
+  
+  - npm run build
+  - site overview => Production deploys => drag and drop (your dist folder)
+  
+  LINK WITH GITHUB
+   - Add New Site => Github
+   - Select your Project and click on the button
+   - Now we have a form, with branches and name and so on 
+   - At the end click on the deploy
+   
+   For Updates:
+   git add . => git commit -m "" => git push
+   
+   -----------------------------------------------------------------
+   with render.com
+   
+   - New + => Static Site
+   - Select a Repo and click Connect
+   - Now we have a form, with branches and name and so on
+   - In Build Command => npm run build
+   - In Publish Directory => dist
+   - Now click on => Deploy Static Site
+ 
+ 
+ 
