@@ -1,6 +1,5 @@
 const BASE_URL = "http://localhost:3000";
 
-// 2. Fetch data from the server
 async function fetchData(endpoint) {
   try {
     const response = await fetch(`${BASE_URL}/${endpoint}`);
@@ -9,11 +8,10 @@ async function fetchData(endpoint) {
     }
     return await response.json();
   } catch (error) {
-    console.log("Fetch failed", error);
+    console.log("Fetch fehlgeschlagen", error);
   }
 }
 
-// 3. Render data in the DOM
 function renderData(data, elementId) {
   const list = document.getElementById(elementId);
   list.innerHTML = "";
@@ -24,7 +22,6 @@ function renderData(data, elementId) {
   });
 }
 
-// 1. Load members and books
 async function loadData() {
   const members = await fetchData("members");
   const books = await fetchData("books");
@@ -33,7 +30,6 @@ async function loadData() {
   if (books) renderData(books.data, "booksList");
 }
 
-// Add a new member on click
 async function addMember() {
   const nameInput = document.getElementById("memberName");
   const emailInput = document.getElementById("memberEmail");
@@ -42,7 +38,7 @@ async function addMember() {
   const email = emailInput.value.trim();
 
   if (!name || !email) {
-    alert("Please provide both a name and an email!");
+    alert("Name und E-Mail werden benötigt!");
     return;
   }
 
@@ -59,13 +55,12 @@ async function addMember() {
       throw new Error("HTTP-Fehler");
     }
 
-    // Clear input fields after successful submission
     nameInput.value = "";
     emailInput.value = "";
 
     loadData();
   } catch (error) {
-    console.log("Could not add a member!", error);
+    console.log("Hinzufügen des Membes fehlgeschlagen!", error);
   }
 }
 
