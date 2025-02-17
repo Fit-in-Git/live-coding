@@ -134,8 +134,8 @@
   - Lang: `http://example.org/users/053693df-9112-4305-84f2-0ad8f367acb8`
 
 ## ObjectIDs
-- Die ObjectIDs in MongoDB sind eher inkrementell als völlig zufällige
-  - Sie haben aber einen Aspekt an Zufälligkeit Datenbankadministration
+- Die ObjectIDs in MongoDB sind eher inkrementell als völlig zufällig
+  - Sie haben aber einen Aspekt an Zufälligkeit
 
 Die 12-Byte-ObjectID besteht aus:
  - Einem 4-Byte-Zeitstempel, der die Erstellungszeit der ObjectId darstellt
