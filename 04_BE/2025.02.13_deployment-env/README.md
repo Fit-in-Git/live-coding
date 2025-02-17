@@ -33,3 +33,48 @@ const PORT = process.env.PORT || 3000;
 - COMMITTE KEINE GEHEIMNISSE WIE API-SCHLÜSSEL
 - `.env` gehört in `.gitignore`
 - Du könntest aber .env.example (oder .env.sample) in git haben, um Entwicklern bei der Einrichtung zu helfen!
+
+## Wiederholung Deployment Webserver
+
+### Vorbereitungen im Frontend
+
+1. `npm run build` ausführen, um den `build`-Ordner zu bekommen
+2. Den dist-Ordner in das Backend verschieben
+3. In der `.gitignore` prüfen, dass kein Eintrag mit `dist` vorhanden ist, ansonsten diesen entfernen
+
+WICHTIG: Sobald im Frontend eine Änderung gemacht wird, müssen die Schritte 1. und 2. wiederholt werden!
+
+### Vorbereitungen im Backend
+
+- Überprüfen ob die `.env` und `.env.sample` vorhanden sind. Die `.env` sollte sowohl key als auch value enthalten
+- `.env.sample` enthält nur den key!
+- In der `.gitignore` prüfen, dass dass `.env` als Eintrag vorhanden ist und die Datei ausgegraut im Explorer dargestellt wird
+- Die `.env.sample` wird nicht in die .gitignore aufgenommen, weil sie bei Github hochgeladen werden sollte
+
+In der `package.json` sollten zwei Skripte erstellt werden, einmal für development und einmal für production, z.B. so:
+```js
+"dev":"nodemon --env-file=.env server.js",
+"start": "node server.js" // wird bei Render benutzt
+```
+
+Da wir mit ES6 Modules arbeiten, müssen wir uns erst ein paar Dateien erstellen, die den absoluten Pfad zu unserer Server-Datei und dem Backend-Ordner anzeigen.
+
+```js
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+```
+
+Anschließend die folgenden zwei Zeilen unterhalb der Routen einfügen. Dadurch werden die statischen Dateien und die index.html bei jeder Anfrage an den Client geschickt
+
+```js
+app.use("/", express.static(path.join(__dirname, "/dist"))); 
+app.get("/*", (req, res) => res.sendFile(__dirname + "/dist/index.html"));
+```
+
+- Jetzt kann geprüft werden ob die App funktioniert, `npm run dev` ausfühen und anschließend die Adresse auf der der Server läuft, also z.B. `localhost:3000` im Browser öffnen. Das Frontend muss nicht gestartet werden!
+
+- Wenn alles funktioniert, adden, commiten und zu Github pushen
+
+- Für den Ablauf bei Render, die PDF mit dem Beispiel ansehen.
