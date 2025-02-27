@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <style>
+        label, button {
+            display: block;
+            margin: 1em;
+        }
+    </style>
+</head>
+<body>
+    <label>
+        Sort by
+        <select name="sortBy" id="sortBy">
+            <option value="createdAt">Created At</option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+        </select>
+    </label>
+    <label>
+        Sort direction
+        <select name="sortDirection" id="sortDirection">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+    </label>
+    <label>
+        Max price
+        <input type="number" name="maxPrice" id="maxPrice">
+    </label>
+    <button>Search</button>
+
+    <table>
+        <thead>
+            <th>Price</th>
+            <th>Name</th>
+            <th>Created</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <label>
+        Current Page
+        <input type="number", name="currentPage" id="currentPage" value="1">
+    </label>
+
+    <script>
+        const tbody = document.querySelector("tbody");
+        const button = document.querySelector("button");
+        const currentPageSelector = document.querySelector("#currentPage");
+
+        button.addEventListener("click", async()=>{
+            const currentPage = currentPageSelector.value;
+            const sortBy = document.querySelector("#sortBy").value;
+            const sortDirection = document.querySelector("#sortDirection").value;
+            const maxPrice = document.querySelector("#maxPrice").value;
+
+            const url = `http://localhost:3000/products?currentPage=${currentPage}&sortBy=${sortBy}&sortDirection=${sortDirection}&maxPrice=${maxPrice}`;
+
+            const response = await fetch(url);
+            const data = await response.json();
+
+            tbody.innerHTML = "";
+            let html = "";
+
+            data.data.forEach(product => {
+                html += `
+                    <tr>
+                        <td>${product.price}</td>
+                        <td>${product.name}</td>
+                        <td>${product.createdAt}</td>
+                    </tr>
+                `
+            });
+            tbody.innerHTML = html;
+        });
+
+        currentPageSelector.addEventListener("change", ()=>{
+            button.click(); // simuliert einen Klick auf den Button
+        })
+    </script>
+</body>
+</html>
