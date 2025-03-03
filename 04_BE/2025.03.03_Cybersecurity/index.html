@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Demo</title>
+</head>
+<body>
+    <input type="text" style="width: 30ch;">
+    <button>Send</button>
+
+    <ul></ul>
+    <script>
+        // Nachrichten vom Server holen
+        function refresh(){
+            fetch('http://localhost:3000/api')
+            .then((res)=>res.json())
+            .then((data)=>{
+                let html = '';
+                data.forEach((msg)=>(html += `<li>${msg}</li>`));
+                document.querySelector("ul").innerHTML = html;
+            })
+        }
+        refresh();
+
+        // Nachricht an den Server schicken
+        document.querySelector('button').addEventListener('click', (evt)=>{
+            const payload = `{"text": "${document.querySelector('input').value}"}`
+            fetch('http://localhost:3000/api',{
+                method: 'POST',
+                body: payload,
+                headers: {'content-type': 'application/json'}
+            }).then(refresh)
+        })
+    </script>
+</body>
+</html>
