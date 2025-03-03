@@ -1,6 +1,6 @@
 # Sicherheitskonzepte
 
-Wie haben uns eine Reihe von Begriffen im Zusammenhang mit Cybersecurity angesehen.
+Wir haben uns eine Reihe von Begriffen im Zusammenhang mit Cybersecurity angesehen.
 
 ## Social Engineering
 
