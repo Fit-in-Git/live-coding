@@ -115,7 +115,7 @@ Weil sie es tun!
 ## Red Team vs Blue Team
 
 - Militärischer Begriff
-- 
+
 Blue Team: Verteidiger
 
 Red Team: Angreifer
