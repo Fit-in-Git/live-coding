@@ -8,7 +8,7 @@ function escapeHTML(str){
             '<':'&lt;',
             '>':'&gt;',
             '"':'&quot;',
-            "'":'&#39'
+            "'":'&#39;'
         }
         return blackList[char];
     })
