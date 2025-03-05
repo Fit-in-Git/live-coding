@@ -1,0 +1,19 @@
+{
+  "name": "2025.03.05_authentication-hashing",
+  "version": "1.0.0",
+  "description": "- Erinnern wir uns an HTTPS. Was ist das und was macht es? - Daten werden während der Übertragung verschlüsselt - Niemand kann das Passwort lesen, während es online übertragen wird - Das Passwort kommt beim Server an und der kann es lesen - Dann kann der Server den Vergleich machen - Eingabe vs. Datenbank - Die Kommunikation verläuft verschlüsselt",
+  "main": "bcrypt-demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --env-file=.env server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  }
+}
