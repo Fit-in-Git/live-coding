@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+</head>
+<body>
+    <h1>Email Verification</h1>
+    <!-- Im p-Tag zeigen wir an, ob der User verifiziert wurde -->
+     <p id="verification-status">Verification Status: Not Verified!</p>
+     <script>
+        async function verifyEmail(){
+            /*
+            Mit URLSearchParams holen wir den Token, den wir im Backend als Query am Ender der URL verschickt haben (per Mail). Mit urlParams.get("token") können wir den Teil rausfiltern.
+            */
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get("token");
+            console.log({token});
+            if (token){
+                try {
+                    const response = await fetch(`http://localhost:3000/users/verify/${token}`);
+
+                    if (response.ok){
+                        const data = await response.json();
+                        console.log({data});
+                        
+                        if (data.emailValidated){
+                            document.querySelector("#verification-status").textContent = "Verification Status: Verified!"
+                        }
+                    } else {
+                        console.log("Fehler beim Verifizieren der E-Mail:", response.statusText);
+                    }
+                } catch (error) {
+                    console.log("E-Mail-Verifizierungsfehler:", error);
+                    
+                }
+            }
+        }
+        verifyEmail();
+     </script>
+</body>
+</html>
