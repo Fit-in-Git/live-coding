@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudinary File Upload</title>
+</head>
+<body>
+    <form id="imageUploadForm">
+        <input type="file" id="imageInput">
+        <button type="button" id="uploadButton">Upload Image</button>
+    </form>
+    <img id="previewImage" style="display: none;" width="200" height="200">
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const imageInput = document.querySelector("#imageInput");
+            const uploadButton = document.querySelector("#uploadButton");
+            const previewImage = document.querySelector("#previewImage");
+ 
+            uploadButton.addEventListener("click", ()=>{
+                const selectedFile = imageInput.files[0];
+                if (selectedFile){
+                    const reader = new FileReader();
+                    reader.readAsDataURL(selectedFile);
+                    reader.onload = async function(){
+                        const base64Image = reader.result;
+                        try {
+                            const response = await uploadImageToServer(base64Image);
+                            console.log({response});
+                            previewImage.src = response.cloudImg;
+                            previewImage.style.display = "block";
+                        } catch (error) {
+                            console.log("Image upload failed!", error);
+                        }
+                    }
+                }
+            })
+        })
+
+        async function uploadImageToServer(base64Image){
+            try {
+                const response = await fetch("http://localhost:3000/images", {
+                    method: "POST",
+                    headers: {"Content-Type":"application/json"},
+                    body: JSON.stringify({image:base64Image})
+                });
+                if (!response.ok) throw new Error("Image upload failed!");
+                return response.json();
+            } catch (error) {
+                throw error;
+            }
+        };
+    </script>
+</body>
+</html>

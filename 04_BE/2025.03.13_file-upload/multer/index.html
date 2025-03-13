@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatars</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 5px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+            h2 {
+                margin-top: 0;
+            }
+        }
+        .form-group {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            input, button {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Registrierung</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required >
+            </div>
+            <div class="form-group">
+                <label for="profilePicture">Profilbild</label>
+                <input type="file" id="profilePicture" name="profilePicture" required >
+            </div>
+            <div class="form-group">
+                <button>Registrieren</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container" id="userList">
+        <h2>Testing</h2>
+        <button id="users">Zeige alle Benutzer</button>
+    </div>
+
+    <script>
+        document.getElementById("users").addEventListener("click", function(){
+            fetch("http://localhost:3000/users")
+            .then(res => res.json())
+            .then(data => {
+                console.log({data});
+                const html = data.map(user => {
+                    return `
+                        <div class="container">
+                            <img src=${`http://localhost:3000/users/${user.username}/photo`} width="100" alt="profile picture">
+                            ${user.username}
+                        </div>
+                    `
+                }).join("");
+                document.getElementById("userList").innerHTML = html;
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        });
+
+        document.getElementById("registrationForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            const formData = new FormData(this)
+
+            fetch("http://localhost:3000/register", {
+                method: "POST",
+                body:formData
+            }).then(response => {
+                if (response.ok){
+                    alert("Registrierung erfolgreich!")
+                } else {
+                    alert("Registrierung fehlgeschlagen!")
+                }
+            }).catch(error => {
+                console.log(error);  
+            })
+        })
+    </script>
+</body>
+</html>

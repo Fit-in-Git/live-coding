@@ -1,0 +1,21 @@
+{
+  "name": "2025.03.13_file-upload",
+  "version": "1.0.0",
+  "description": "- Sicherheitsbedenken - Das Hochladen von Dateien ist ein potenzieller Angriffsvektor (nicht ein riesiger, aber immer noch!)   - Was, wenn ein Benutzer anfängt, eine Datei hochzuladen, die nur Terrabytes \"heißer Luft\" enthält?   - Das Übertragen, Verarbeiten und Speichern davon kostet Geld und Ressourcen!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --env-file=.env server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  }
+}
