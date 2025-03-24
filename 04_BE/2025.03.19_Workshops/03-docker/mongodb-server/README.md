@@ -1,15 +1,14 @@
-1. Dockerfile erstellen
-2. .dockerignore
-3. Image erstellen `sudo docker build -t my-mongodb-app .`
-4. Container starten `sudo docker run -d -p 3000:3000 my-mongodb-app`
+## Vorarbeit:
+- Dockerfile für den Express-Server erstellen
+- .dockerignore erstellen
 
 ## Server und MongoDB in eigenen Containern starten
 
-1. `sudo docker build -t my-mongodb-app .`
-2. `sudo docker pull mongo`
-3. ```
-docker network create mynetwork
-
+1. Express-Server-Image bauen `sudo docker build -t my-mongodb-app .`
+2. Netzwerk erstellen `docker network create mynetwork`
+3. Den lokalen MongoDB-Dienst stoppen `sudo systemctl stop mongod` (Verhindert Konflikte mit dem MongoDB-Container auf Port 27017)
+4. MongoDB Container im Netzwerk starten (lädt MongoDB vom Docker-Hub)
+```
 docker run -d \
   --network=mynetwork \
   --name my-mongo \
@@ -17,4 +16,14 @@ docker run -d \
   -e MONGO_INITDB_DATABASE=docker \
   mongo
 
+```
+4. Server Container mit dem Netzwerk verbinden
+```
+docker run -d \
+  --network=mynetwork \
+  --name my-express-app \
+  -p 3000:3000 \
+  -e MONGO_URL=mongodb://my-mongo:27017 \
+  -e DATABASE=mongodb-server \
+  my-mongodb-app
 ```
