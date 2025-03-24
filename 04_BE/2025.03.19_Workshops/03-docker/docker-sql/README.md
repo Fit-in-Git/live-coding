@@ -9,7 +9,10 @@
 3. Falls postgres lokal läuft, stoppen mit: 
    `sudo systemctl stop postgresql`
 
-4. docker compose starten: `docker-compose up -d`
+4. docker compose starten: `docker compose up -d`
 
 5. Mit psql verbinden aus dem Container heraus
    `docker exec -it postgres-container psql -U myuser -d mydatabase`
+
+6. compose beenden und container sowie images löschen
+   `docker compose down --rmi all`
