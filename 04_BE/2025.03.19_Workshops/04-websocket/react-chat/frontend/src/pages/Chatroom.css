@@ -1,0 +1,7 @@
+.online::marker {
+    color: lightseagreen;
+}
+
+.offline::marker {
+    color: red;
+}

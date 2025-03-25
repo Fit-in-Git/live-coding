@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Demo</title>
+</head>
+<body>
+    <input type="text" id="message" placeholder="Nachricht eingeben">
+    <button onclick="senden()">Senden</button>
+
+    <!-- Damit kann der Browser mit dem WebSocket-Server kommunizieren -->
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+    <script>
+        // Verbindung zum Server herstellen
+        const socket = io();
+
+        socket.on("neue nachricht", (msg)=>{
+            const p = document.createElement("p");
+            p.textContent = msg;
+            document.body.appendChild(p);
+        });
+
+        // Sendet Nachrichten an den Server
+        function senden(){
+            const input = document.getElementById("message");
+            socket.emit("nachricht senden", input.value);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
